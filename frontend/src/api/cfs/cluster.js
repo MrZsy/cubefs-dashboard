@@ -18,6 +18,7 @@ import Ajax from '../ajax'
 
 const prefix = ({ cluster_name: clusterName }) => `/api/cubefs/console/cfs/${clusterName}/`
 const clusterPrefix = '/api/cubefs/console/'
+const blobstorePrefix = ({ cluster_name: clusterName, cluster_id: clusterId }) => `/api/cubefs/console/blobstore/${clusterName}/${clusterId}/`
 // -----------  集群相关  --------------
 
 export const getRegions = (param) => {
@@ -234,4 +235,19 @@ export const setCors = (param) => {
 }
 export const deleteCors = (param) => {
   return Ajax.delete(prefix(param) + 's3/vols/cors/delete', param)
+}
+
+// -----------  纠删码数据节点  --------------
+
+// 纠删码节点信息
+export const getBlobClusterStat = (param) => {
+  return Ajax.get(blobstorePrefix(param) + 'stat')
+}
+
+export const getBlobNodeList = (param) => {
+  return Ajax.get(blobstorePrefix(param) + 'nodes/list')
+}
+
+export const getBlobService = (param) => {
+  return Ajax.get(blobstorePrefix(param) + 'services/list')
 }

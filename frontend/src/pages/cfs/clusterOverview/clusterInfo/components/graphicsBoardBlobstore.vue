@@ -32,6 +32,7 @@
           :key="index"
           :e-data="item.data"
           :title="item.title"
+          :color="['#00DAB3', '#ff0000']"
         >
         </CircleCharts>
       </div>

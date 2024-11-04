@@ -68,6 +68,12 @@
             :cluster-info="clusterInfo"
           />
         </el-collapse-item>
+        <el-collapse-item name="2">
+          <span slot="title" class="collapse-title">{{ $t('common.dashboardblobstore') }}</span>
+          <GraphicsBoardBlobstore
+            :cluster-info="clusterInfo"
+          />
+        </el-collapse-item>
       </el-collapse>
     </el-card>
   </div>
@@ -75,12 +81,14 @@
 <script>
 import { mapGetters } from 'vuex'
 import GraphicsBoard from './components/graphicsBoard.vue'
+import GraphicsBoardBlobstore from './components/graphicsBoardBlobstore.vue'
 import UserManage from './user'
 import { getVolList } from '@/api/cfs/cluster'
 export default {
   name: '',
   components: {
     GraphicsBoard,
+    GraphicsBoardBlobstore,
     UserManage,
   },
   data () {

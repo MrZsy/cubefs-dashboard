@@ -42,7 +42,7 @@ export default {
     createtime: '创建时间',
     curpath: '当前路径',
     dashboard: '图形看板',
-    dashboardblob: '纠删码图形看板',
+    dashboardblobstore: '纠删码图形看板',
     data: '数据',
     datablock: '数据块',
     datanodes: '数据节点',
